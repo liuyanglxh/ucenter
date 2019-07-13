@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: ucenter
+  cloud:
+    config:
+      uri: http://localhost:8888
+  jackson:
+      default-property-inclusion: non_null
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://47.105.111.80:8761/eureka/
+
