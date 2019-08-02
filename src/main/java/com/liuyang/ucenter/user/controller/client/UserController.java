@@ -26,7 +26,6 @@ public class UserController extends BaseController {
     public Result getUserInfo(@RequestParam(value = "id", required = false) Integer id) {
         UserEntity user = userService.get(id);
 
-        System.out.println("header is ---" + request.getHeader("header"));
         return Result.success(user);
     }
 
