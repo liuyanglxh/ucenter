@@ -12,6 +12,12 @@ public class BusinessServiceFallbackService implements FallbackFactory<BusinessS
         return new BusinessService() {
             @Override
             public Result<String> getBusinessByUser(Integer userId) {
+                if (cause != null) {
+                    System.out.println("error ");
+                    cause.printStackTrace();
+                } else {
+                    System.out.println("error is null");
+                }
                 return null;
             }
         };

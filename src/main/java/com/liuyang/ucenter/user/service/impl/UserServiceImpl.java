@@ -1,7 +1,7 @@
 package com.liuyang.ucenter.user.service.impl;
 
-import com.liuyang.ucenter.user.pojo.Result;
 import com.liuyang.ucenter.user.pojo.entity.UserEntity;
+import com.liuyang.ucenter.user.pojo.view.UserView;
 import com.liuyang.ucenter.user.rpc.BusinessService;
 import com.liuyang.ucenter.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,17 +21,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserEntity get(Integer id) {
-        id = id == null ? defaultUserId : id;
+        if (id == null) {
+            return null;
+        }
         UserEntity userEntity = new UserEntity();
         userEntity.setId(id);
         userEntity.setAge(10);
-        Result<String> biz = businessService.getBusinessByUser(id);
-        String name = "";
-        if (biz != null) {
-            name = biz.getData();
-        }
-        userEntity.setName("user--" + id + ":" + name);
+        userEntity.setName(String.format("name is %d", id));
 
         return userEntity;
+    }
+
+    @Override
+    public UserView getView(Integer userId) {
+        return null;
     }
 }
