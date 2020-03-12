@@ -29,4 +29,5 @@ public class UserController extends BaseController {
         return Result.success(userService.get(id));
     }
 
+
 }

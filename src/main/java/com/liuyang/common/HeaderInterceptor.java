@@ -16,13 +16,6 @@ public class HeaderInterceptor implements RequestInterceptor {
 
     @Override
     public void apply(RequestTemplate template) {
-        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder
-                .getRequestAttributes();
-        HttpServletRequest request = attributes.getRequest();
-        Enumeration<String> headers = request.getHeaderNames();
-        while (headers.hasMoreElements()) {
-            String header = headers.nextElement();
-            template.header(header, request.getHeader(header));
-        }
+
     }
 }
