@@ -56,6 +56,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
+        <!--sleuth-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+        </dependency>
         <!--zipkin-->
         <!--<dependency>-->
             <!--<groupId>org.springframework.cloud</groupId>-->

@@ -21,7 +21,11 @@ public class UserController extends BaseController {
     private HttpServletRequest request;
 
     @GetMapping("info")
-    public Result getUserInfo(@RequestParam(value = "id", required = false) Integer id) {
+    public Result getUserInfo(@RequestParam(value = "id", required = false) Integer id,
+                              @RequestParam(value = "throwExc", defaultValue = "false") boolean throwExc) throws Exception {
+        if (throwExc) {
+            throw new Exception("哈哈哈哈");
+        }
         return Result.success(userService.get(id));
     }
 
