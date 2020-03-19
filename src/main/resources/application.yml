@@ -21,3 +21,10 @@ eureka:
     serviceUrl:
       defaultZone: http://192.168.0.101:8761/eureka/
 
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+    server:
+      address: localhost
+
