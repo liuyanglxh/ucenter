@@ -25,6 +25,6 @@ endpoints:
   shutdown:
     enabled: true
     sensitive: false
-    server:
-      address: localhost
+#    server:
+#      address: localhost
 
